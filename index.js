@@ -11,7 +11,7 @@ var app = express();
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
-mongoose.connect(process.env.MONGO_DB);
+mongoose.connect(config.DB,{ useMongoClient:true });
 var db = mongoose.connection;
 db.once("open", function(){
   console.log("DB connected");
