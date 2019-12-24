@@ -47,6 +47,6 @@ app.use("/users", require("./routes/users"));
 
 // Port setting
 var port = 3000
-app.listen(port, function(){
+app.listen(process.env.PORT || 8080 , function(){
   console.log("server on! http://localhost:"+port);
 });
