@@ -10,6 +10,17 @@ router.get("/about", function(req, res){
   res.render("home/about");
 });
 
+
+function makeRandom(min, max){
+    var RandVal = Math.floor(Math.random()*(max-min+1)) + min;
+    return RandVal;
+}
+
+router.get("/works", function(req, res){
+  var rand = Math.floor(Math.random()*20);
+  res.render("works/"+rand);
+});
+
 // Login
 router.get("/login", function (req,res) {
   var username = req.flash("username")[0];
