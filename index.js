@@ -11,7 +11,9 @@ var app = express();
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
-mongoose.connect(config.DB,{ useMongoClient:true });
+
+mongoose.connect('mongodb+srv://foodok:Foodok94@cluster0-vnv6g.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
+//process.env.MONGO_DB
 var db = mongoose.connection;
 db.once("open", function(){
   console.log("DB connected");
